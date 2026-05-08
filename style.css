@@ -1,0 +1,154 @@
+:root {
+  --text: #334155;
+  --muted: #64748b;
+  --cream: #fffaf1;
+  --mint: #dff7ee;
+  --peach: #ffe1d6;
+  --sky: #dceeff;
+  --white: #ffffff;
+  --accent: #6fb8a4;
+  --shadow: rgba(99, 102, 111, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, var(--sky), transparent 34%),
+    radial-gradient(circle at bottom right, var(--peach), transparent 30%),
+    linear-gradient(135deg, var(--cream), var(--mint));
+  line-height: 1.8;
+}
+
+.profile-page {
+  width: min(100%, 1040px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 48px 20px;
+  display: grid;
+  place-items: center;
+}
+
+.profile-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 42px;
+  align-items: center;
+  padding: 42px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 8px;
+  box-shadow: 0 24px 60px var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.photo-frame {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 14px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, var(--peach), var(--sky));
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border: 2px dashed rgba(51, 65, 85, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.label {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.job {
+  margin: 8px 0 20px;
+  color: var(--muted);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.hobby-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hobby-list span {
+  min-width: 72px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid rgba(111, 184, 164, 0.26);
+  color: #3f7f70;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.introduction {
+  margin: 0;
+  max-width: 640px;
+  font-size: 17px;
+}
+
+@media (max-width: 760px) {
+  .profile-page {
+    padding: 24px 16px;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 24px;
+  }
+
+  .photo-frame {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .job {
+    font-size: 18px;
+  }
+
+  .introduction {
+    font-size: 16px;
+  }
+}
