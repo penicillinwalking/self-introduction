@@ -26,6 +26,10 @@ body {
   line-height: 1.8;
 }
 
+img {
+  max-width: 100%;
+}
+
 .profile-page {
   width: min(100%, 1040px);
   min-height: 100vh;
@@ -47,6 +51,10 @@ body {
   border-radius: 8px;
   box-shadow: 0 24px 60px var(--shadow);
   backdrop-filter: blur(10px);
+}
+
+.profile-content {
+  min-width: 0;
 }
 
 .photo-frame {
@@ -90,6 +98,7 @@ h1 {
   font-size: 42px;
   line-height: 1.25;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .job {
@@ -155,11 +164,13 @@ h1 {
   margin: 0;
   max-width: 640px;
   font-size: 17px;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 760px) {
   .profile-page {
-    padding: 24px 16px;
+    padding: 24px 14px;
+    place-items: start center;
   }
 
   .profile-card {
@@ -169,7 +180,7 @@ h1 {
   }
 
   .photo-frame {
-    max-width: 280px;
+    max-width: min(280px, 82vw);
     margin: 0 auto;
   }
 
@@ -183,5 +194,71 @@ h1 {
 
   .introduction {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background:
+      radial-gradient(circle at top left, var(--sky), transparent 46%),
+      radial-gradient(circle at bottom right, var(--peach), transparent 42%),
+      linear-gradient(135deg, var(--cream), var(--mint));
+  }
+
+  .profile-page {
+    padding: 16px 12px;
+  }
+
+  .profile-card {
+    gap: 20px;
+    padding: 18px;
+    box-shadow: 0 16px 36px var(--shadow);
+  }
+
+  .photo-frame {
+    padding: 10px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .job {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .hobby-list,
+  .food-list,
+  .sport-list {
+    gap: 8px;
+  }
+
+  .hobby-list,
+  .favorite-foods,
+  .favorite-sports {
+    margin-bottom: 20px;
+  }
+
+  .hobby-list span,
+  .food-list span,
+  .sport-list span {
+    min-width: 0;
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+
+  .favorite-foods h2,
+  .favorite-sports h2 {
+    font-size: 15px;
+  }
+
+  .introduction {
+    font-size: 15px;
+    line-height: 1.75;
   }
 }
